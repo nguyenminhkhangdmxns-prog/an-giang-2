@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An Giang – Miền đất hồn quê</title>
+
+<style>
+:root {
+    --pine:#123f32;
+    --green:#24664c;
+    --gold:#e9bd62;
+    --cream:#f7f5ed;
+    --ink:#20372e;
+}
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family:Arial,sans-serif;
+    color:var(--ink);
+    background:white;
+    line-height:1.7;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+.wrap {
+    width:min(1160px,90%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header {
+    height:72px;
+    position:sticky;
+    top:0;
+    background:#ffffffed;
+    z-index:9;
+    box-shadow:0 3px 18px #0000000d;
+}
+
+.nav {
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand {
+    font-size:22px;
+    font-weight:900;
+    color:var(--pine);
+}
+
+.brand b {
+    color:var(--gold);
+}
+
+nav {
+    display:flex;
+    gap:24px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+nav a:hover {
+    color:#b4842d;
+}
+
+/* BANNER */
+
+.hero {
+    min-height:610px;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:white;
+
+    background:
+    linear-gradient(90deg,#08291dcc,#08291d66),
+    url('images/tra-su.jpg') center/cover;
+}
+
+.hero .wrap {
+    padding:100px 0;
+}
+
+.eyebrow {
+    letter-spacing:5px;
+    color:#f3d58e;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.hero h1 {
+    font:bold clamp(48px,8vw,88px)/1.1 Georgia,serif;
+    margin:20px 0;
+}
+
+.hero h1 span {
+    color:#f3d58e;
+}
+
+.hero p {
+    max-width:700px;
+    margin:auto;
+    font-size:17px;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:28px;
+    padding:13px 26px;
+    border-radius:30px;
+    background:var(--gold);
+    color:#183b2d;
+    font-weight:bold;
+}
+
+/* SECTION */
+
+.section {
+    padding:82px 0;
+}
+
+.soft {
+    background:var(--cream);
+}
+
+.heading {
+    text-align:center;
+    margin:0 auto 42px;
+    max-width:750px;
+}
+
+.heading small {
+    color:#b18435;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.heading h2 {
+    font:bold clamp(30px,4vw,44px) Georgia,serif;
+    color:var(--pine);
+    margin:9px 0 12px;
+}
+
+.heading p {
+    color:#69786f;
+}
+
+/* INTRODUCTION */
+
+.intro {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:42px;
+    align-items:center;
+}
+
+.photo {
+    width:100%;
+    height:370px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 14px 35px #163d2b20;
+}
+
+.intro h2 {
+    font:bold 38px Georgia;
+    color:var(--pine);
+    margin:8px 0 18px;
+}
+
+.intro p {
+    margin-bottom:12px;
+    color:#5e6f65;
+}
+
+/* HIGHLIGHTS */
+
+.facts {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:32px;
+}
+
+.fact {
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 20px #183c2b0b;
+}
+
+.fact img {
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+.fact-text {
+    padding:13px;
+}
+
+.fact strong {
+    display:block;
+    font-size:19px;
+    color:var(--green);
+}
+
+.fact span {
+    font-size:13px;
+    color:#68766d;
+}
+
+/* GENERAL CARD */
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card {
+    border-radius:16px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 8px 25px #173e2b12;
+    transition:.25s;
+}
+
+.card:hover {
+    transform:translateY(-5px);
+}
+
+.card img {
+    height:220px;
+    width:100%;
+    object-fit:cover;
+    background:#dce8dd;
+}
+
+.card .body {
+    padding:20px;
+}
+
+.tag {
+    font-size:11px;
+    color:#a4772e;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.card h3 {
+    color:var(--pine);
+    font:bold 22px Georgia;
+    margin:7px 0;
+}
+
+.card p {
+    font-size:14px;
+    color:#64746a;
+}
+
+/* DESTINATIONS */
+
+#diemden .grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+}
+
+#diemden .card {
+    display:grid;
+    grid-template-columns:42% 58%;
+    min-height:235px;
+    align-items:stretch;
+}
+
+#diemden .card img {
+    height:100%;
+    min-height:235px;
+    object-fit:cover;
+}
+
+#diemden .card .body {
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+#diemden .card h3 {
+    font-size:21px;
+}
+
+#diemden .card p {
+    font-size:13px;
+    line-height:1.75;
+}
+
+/* CULTURE */
+
+.two {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.culture {
+    display:flex;
+    align-items:stretch;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 22px #183c2b0b;
+    min-height:240px;
+    transition:.3s;
+}
+
+.culture:hover {
+    transform:translateY(-5px);
+}
+
+.culture img {
+    width:42%;
+    object-fit:cover;
+    min-height:240px;
+}
+
+.culture div {
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    flex:1;
+}
+
+.culture h3 {
+    color:var(--pine);
+    margin:5px 0;
+}
+
+.culture p {
+    font-size:14px;
+    color:#64746a;
+}
+
+/* FOOD */
+
+.food .card img {
+    height:210px;
+}
+
+/* ITINERARY */
+
+.plan {
+    max-width:900px;
+    margin:auto;
+}
+
+.day {
+    display:flex;
+    gap:22px;
+    align-items:center;
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    margin:18px 0;
+    box-shadow:0 5px 18px #173e2b0b;
+}
+
+.day img {
+    width:230px;
+    height:155px;
+    object-fit:cover;
+    border-radius:10px;
+    flex-shrink:0;
+}
+
+.day b {
+    background:var(--pine);
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    min-width:100px;
+    text-align:center;
+}
+
+.day-copy {
+    flex:1;
+}
+
+.day h3 {
+    color:var(--pine);
+    margin-bottom:8px;
+}
+
+.day p {
+    font-size:14px;
+    color:#64746a;
+}
+
+/* GALLERY */
+
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.gallery img {
+    height:190px;
+    width:100%;
+    object-fit:cover;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.04);
+}
+
+/* EXPERIENCE */
+
+.experience-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.experience-card {
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px #173e2b12;
+}
+
+.experience-card img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.experience-card div {
+    padding:20px;
+}
+
+.experience-card h3 {
+    color:var(--pine);
+    margin-bottom:8px;
+}
+
+.experience-card p {
+    color:#64746a;
+    font-size:14px;
+}
+
+/* TIPS */
+
+.tips-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.tip {
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px #173e2b12;
+}
+
+.tip img {
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.tip div {
+    padding:20px;
+}
+
+.tip h3 {
+    color:var(--pine);
+    margin-bottom:8px;
+}
+
+.tip p {
+    color:#64746a;
+    font-size:14px;
+}
+
+/* CALLOUT */
+
+.callout {
+    background:
+    linear-gradient(120deg,#103d30e8,#28664be0),
+    url('images/tra-su-2.jpg') center/cover;
+    color:white;
+    text-align:center;
+    padding:85px 20px;
+}
+
+.callout h2 {
+    font:bold 38px Georgia;
+    margin-bottom:14px;
+}
+
+.callout p {
+    max-width:760px;
+    margin:auto;
+    color:#e2eee5;
+}
+
+/* FOOTER */
+
+footer {
+    background:#0d2e24;
+    color:#d6e2d9;
+    padding:42px 0;
+    text-align:center;
+    font-size:13px;
+}
+
+footer strong {
+    color:#f1ce7e;
+}
+
+.credit {
+    margin-top:12px;
+    color:#aebfb3;
+    font-size:12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px) {
+
+    nav {
+        gap:12px;
+        font-size:11px;
+    }
+
+    .intro {
+        grid-template-columns:1fr;
+    }
+
+    .grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    #diemden .grid {
+        grid-template-columns:1fr;
+    }
+
+    .facts {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .two {
+        grid-template-columns:1fr;
+    }
+
+    .gallery {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .experience-grid,
+    .tips-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:540px) {
+
+    .section {
+        padding:60px 0;
+    }
+
+    .grid,
+    .experience-grid,
+    .tips-grid {
+        grid-template-columns:1fr;
+    }
+
+    #diemden .card {
+        grid-template-columns:1fr;
+    }
+
+    #diemden .card img {
+        height:210px;
+        min-height:210px;
+    }
+
+    .culture {
+        display:block;
+    }
+
+    .culture img {
+        width:100%;
+        height:200px;
+    }
+
+    .day {
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .day img {
+        width:100%;
+        height:190px;
+    }
+
+    .gallery img {
+        height:145px;
+    }
+
+    header {
+        height:auto;
+        padding:15px 0;
+    }
+
+    .nav {
+        align-items:flex-start;
+        gap:12px;
+        flex-direction:column;
+    }
+
+    nav {
+        flex-wrap:wrap;
+    }
+
+    .hero {
+        min-height:530px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="wrap nav">
+
+<a class="brand" href="#home">AN GIANG<b>.</b></a>
+
+<nav>
+<a href="#gioithieu">GIỚI THIỆU</a>
+<a href="#diemden">ĐIỂM ĐẾN</a>
+<a href="#vanhoa">VĂN HÓA</a>
+<a href="#amthuc">ẨM THỰC</a>
+<a href="#hinhanh">HÌNH ẢNH</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- BANNER -->
+
+<section class="hero" id="home">
+
+<div class="wrap">
+
+<div class="eyebrow">
+KHÁM PHÁ VÙNG ĐẤT PHƯƠNG NAM
+</div>
+
+<h1>
+AN GIANG<br>
+<span>Miền đất hồn quê</span>
+</h1>
+
+<p>
+Nơi thiên nhiên sông nước gặp núi non Thất Sơn,
+nơi nhiều cộng đồng cùng gìn giữ những sắc màu
+văn hóa độc đáo.
+</p>
+
+<a class="btn" href="#gioithieu">
+BẮT ĐẦU KHÁM PHÁ ↓
+</a>
+
+</div>
+</section>
+
+
+<!-- GIỚI THIỆU -->
+
+<section class="section" id="gioithieu">
+
+<div class="wrap intro">
+
+<img class="photo"
+src="images/nui-cam.jpg"
+alt="Phong cảnh Núi Cấm An Giang">
+
+<div>
+
+<div class="eyebrow">WELCOME TO AN GIANG</div>
+
+<h2>Vẻ đẹp giao hòa của thiên nhiên và văn hóa</h2>
+
+<p>
+An Giang thuộc vùng Tây Nam Bộ, nổi bật với
+đồng bằng sông nước, những cánh đồng lúa,
+hàng thốt nốt và vùng núi Thất Sơn.
+</p>
+
+<p>
+Đây còn là không gian văn hóa đa dạng của
+các cộng đồng Kinh, Khmer, Chăm và Hoa.
+Những di tích, lễ hội, làng nghề và món ăn
+địa phương góp phần tạo nên sức hấp dẫn riêng.
+</p>
+
+<p>
+Du khách có thể kết hợp tham quan sinh thái,
+tìm hiểu lịch sử, trải nghiệm văn hóa và
+thưởng thức ẩm thực miền Tây.
+</p>
+
+</div>
+</div>
+
+<div class="wrap facts">
+
+<div class="fact">
+<img src="images/tra-su.jpg" alt="Rừng tràm">
+<div class="fact-text">
+<strong>🌿</strong>
+<span>Du lịch sinh thái</span>
+</div>
+</div>
+
+<div class="fact">
+<img src="images/nui-cam.jpg" alt="Núi Cấm">
+<div class="fact-text">
+<strong>⛰️</strong>
+<span>Núi non Thất Sơn</span>
+</div>
+</div>
+
+<div class="fact">
+<img src="images/tay-an.jpg" alt="Kiến trúc">
+<div class="fact-text">
+<strong>🏮</strong>
+<span>Văn hóa đa dạng</span>
+</div>
+</div>
+
+<div class="fact">
+<img src="images/food-bun-ca.jpg" alt="Ẩm thực">
+<div class="fact-text">
+<strong>🍜</strong>
+<span>Ẩm thực đặc sắc</span>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ĐIỂM ĐẾN -->
+
+<section class="section soft" id="diemden">
+
+<div class="wrap">
+
+<div class="heading">
+
+<small>EXPLORE AN GIANG</small>
+
+<h2>Những điểm đến nổi bật</h2>
+
+<p>
+Mỗi địa danh mang một câu chuyện riêng,
+từ rừng tràm xanh mát đến núi non
+và công trình văn hóa – tâm linh.
+</p>
+
+</div>
+
+<div class="grid">
+
+<article class="card">
+<img src="images/tra-su.jpg" alt="Rừng tràm Trà Sư">
+
+<div class="body">
+<span class="tag">DU LỊCH SINH THÁI</span>
+<h3>Rừng tràm Trà Sư</h3>
+
+<p>
+Không gian rừng ngập nước với những hàng tràm,
+kênh rạch và hệ sinh thái chim nước.
+Du khách có thể trải nghiệm đi xuồng,
+ngắm cảnh thiên nhiên và tận hưởng
+không khí trong lành.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/nui-cam.jpg" alt="Núi Cấm">
+
+<div class="body">
+<span class="tag">THIÊN NHIÊN</span>
+<h3>Núi Cấm</h3>
+
+<p>
+Một trong những ngọn núi tiêu biểu của vùng
+Thất Sơn, nổi bật với cảnh quan xanh mát,
+khí hậu dễ chịu và nhiều công trình
+tham quan, tín ngưỡng.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/tay-an.jpg" alt="Tây An Cổ Tự">
+
+<div class="body">
+<span class="tag">KIẾN TRÚC – TÂM LINH</span>
+<h3>Tây An Cổ Tự</h3>
+
+<p>
+Ngôi chùa nằm dưới chân Núi Sam,
+gây ấn tượng bởi kiến trúc độc đáo,
+sự kết hợp giữa nhiều phong cách nghệ thuật
+và giá trị văn hóa lịch sử.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/tra-su-2.jpg" alt="Cảnh rừng tràm">
+
+<div class="body">
+<span class="tag">KHÁM PHÁ</span>
+<h3>Vẻ đẹp rừng tràm</h3>
+
+<p>
+Những lối nước len giữa thảm thực vật xanh,
+tạo nên khung cảnh đặc trưng của vùng đất
+ngập nước miền Tây.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/nui-cam-2.jpg" alt="Núi Thất Sơn">
+
+<div class="body">
+<span class="tag">THẮNG CẢNH</span>
+<h3>Vùng núi Thất Sơn</h3>
+
+<p>
+Vùng núi gắn với nhiều câu chuyện dân gian,
+cảnh quan đặc biệt và đời sống văn hóa
+lâu đời của cư dân địa phương.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/tra-su-3.jpg" alt="Thiên nhiên An Giang">
+
+<div class="body">
+<span class="tag">DU LỊCH XANH</span>
+<h3>Thiên nhiên An Giang</h3>
+
+<p>
+Đồng ruộng, sông ngòi và hệ sinh thái
+tự nhiên tạo điều kiện phát triển
+các hoạt động du lịch gần gũi với môi trường.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/ho-ta-pa.jpg" alt="Hồ Tà Pạ">
+
+<div class="body">
+<span class="tag">THẮNG CẢNH</span>
+<h3>Hồ Tà Pạ</h3>
+
+<p>
+Hồ nước xanh được bao quanh bởi
+những vách núi đá, tạo nên khung cảnh
+yên bình và thơ mộng.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/ba-chua-xu.jpg" alt="Miếu Bà Chúa Xứ">
+
+<div class="body">
+<span class="tag">DU LỊCH TÂM LINH</span>
+<h3>Miếu Bà Chúa Xứ Núi Sam</h3>
+
+<p>
+Địa điểm tín ngưỡng nổi tiếng tại Châu Đốc,
+gắn liền với lễ hội Vía Bà Chúa Xứ
+và đời sống tinh thần của người dân.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/lang-cham.jpg" alt="Làng Chăm">
+
+<div class="body">
+<span class="tag">DU LỊCH VĂN HÓA</span>
+<h3>Làng Chăm Châu Giang</h3>
+
+<p>
+Nơi lưu giữ nhiều nét văn hóa truyền thống
+của người Chăm qua kiến trúc thánh đường,
+nhà sàn và nghề dệt thổ cẩm.
+</p>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+
+<!-- VĂN HÓA -->
+
+<section class="section" id="vanhoa">
+
+<div class="wrap">
+
+<div class="heading">
+
+<small>PEOPLE & CULTURE</small>
+
+<h2>Bản sắc văn hóa đa dạng</h2>
+
+<p>
+Sự chung sống của nhiều cộng đồng đã tạo nên
+đời sống văn hóa phong phú, thể hiện qua
+lễ hội, kiến trúc, trang phục và nghề truyền thống.
+</p>
+
+</div>
+
+<div class="two">
+
+<div class="culture">
+
+<img src="images/tay-an.jpg" alt="Kiến trúc Tây An Cổ Tự">
+
+<div>
+<h3>Di sản kiến trúc và tín ngưỡng</h3>
+
+<p>
+Các công trình tôn giáo, tín ngưỡng là điểm nhấn
+trong đời sống tinh thần và hành trình khám phá
+văn hóa địa phương.
+</p>
+</div>
+
+</div>
+
+
+<div class="culture">
+
+<img src="images/le-hoi-via-ba.jpg" alt="Lễ hội Vía Bà Chúa Xứ">
+
+<div>
+<h3>Lễ hội Vía Bà Chúa Xứ</h3>
+
+<p>
+Lễ hội truyền thống nổi tiếng ở Núi Sam,
+thể hiện đời sống tín ngưỡng và nét đẹp
+văn hóa của cộng đồng địa phương.
+</p>
+</div>
+
+</div>
+
+
+<div class="culture">
+
+<img src="images/le-hoi-dua-bo.jpg" alt="Lễ hội đua bò Bảy Núi">
+
+<div>
+<h3>Lễ hội đua bò Bảy Núi</h3>
+
+<p>
+Hoạt động văn hóa đặc sắc của đồng bào Khmer,
+thường diễn ra vào dịp lễ Sene Dolta,
+tạo nên không khí sôi nổi và hấp dẫn.
+</p>
+</div>
+
+</div>
+
+
+<div class="culture">
+
+<img src="images/lang-cham.jpg" alt="Văn hóa Chăm">
+
+<div>
+<h3>Văn hóa người Chăm</h3>
+
+<p>
+Người Chăm lưu giữ nhiều nét văn hóa truyền thống
+như kiến trúc thánh đường, trang phục
+và nghề dệt thổ cẩm thủ công.
+</p>
+</div>
+
+</div>
+
+
+<div class="culture">
+
+<img src="images/van-hoa-khmer.jpg" alt="Chùa Khmer">
+
+<div>
+<h3>Văn hóa Khmer</h3>
+
+<p>
+Văn hóa Khmer thể hiện qua kiến trúc chùa,
+các lễ hội truyền thống, nghệ thuật dân gian
+và phong tục sinh hoạt cộng đồng.
+</p>
+</div>
+
+</div>
+
+
+<div class="culture">
+
+<img src="images/det-tho-cam.jpg" alt="Nghề dệt thổ cẩm">
+
+<div>
+<h3>Nghề truyền thống</h3>
+
+<p>
+Nghề dệt thổ cẩm là nét đẹp văn hóa
+gắn với đời sống cộng đồng người Chăm,
+tạo nên những sản phẩm thủ công độc đáo.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ẨM THỰC -->
+
+<section class="section soft food" id="amthuc">
+
+<div class="wrap">
+
+<div class="heading">
+
+<small>TASTE OF AN GIANG</small>
+
+<h2>Ẩm thực đậm chất miền Tây</h2>
+
+<p>
+Ẩm thực địa phương hấp dẫn bởi nguyên liệu
+phong phú và cách chế biến mang dấu ấn
+vùng sông nước.
+</p>
+
+</div>
+
+<div class="grid">
+
+<article class="card">
+<img src="images/food-bun-ca.jpg" alt="Bún cá Châu Đốc">
+<div class="body">
+<h3>Bún cá Châu Đốc</h3>
+<p>
+Nước dùng đậm đà, cá và rau ăn kèm
+tạo nên hương vị đặc trưng.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/food-thot-not.jpg" alt="Bánh bò thốt nốt">
+<div class="body">
+<h3>Bánh bò thốt nốt</h3>
+<p>
+Món bánh có màu vàng nâu, vị ngọt dịu
+và hương thơm của thốt nốt.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/food-lau-mam.jpg" alt="Lẩu mắm">
+<div class="body">
+<h3>Lẩu mắm</h3>
+<p>
+Món ăn quen thuộc miền Tây,
+thường dùng cùng cá, rau đồng và bún.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/food-ga-dot.jpg" alt="Gà đốt lá chúc">
+<div class="body">
+<h3>Gà đốt lá chúc</h3>
+<p>
+Món ăn nổi tiếng vùng Bảy Núi,
+có hương thơm đặc trưng của lá chúc.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/food-mam.jpg" alt="Mắm Châu Đốc">
+<div class="body">
+<h3>Mắm Châu Đốc</h3>
+<p>
+Đặc sản truyền thống nổi tiếng,
+mang đậm nét văn hóa ẩm thực địa phương.
+</p>
+</div>
+</article>
+
+
+<article class="card">
+<img src="images/food-tung-lo-mo.jpg" alt="Tung lò mò">
+<div class="body">
+<h3>Tung lò mò</h3>
+<p>
+Món lạp xưởng bò truyền thống
+độc đáo của cộng đồng người Chăm.
+</p>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+
+<!-- TRẢI NGHIỆM -->
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="heading">
+
+<small>DISCOVER & EXPERIENCE</small>
+
+<h2>Những trải nghiệm không thể bỏ lỡ</h2>
+
+<p>
+Khám phá thiên nhiên, văn hóa và cuộc sống
+bình dị của người dân An Giang.
+</p>
+
+</div>
+
+<div class="experience-grid">
+
+<div class="experience-card">
+<img src="images/tra-su.jpg" alt="Đi xuồng Trà Sư">
+<div>
+<h3>Đi xuồng rừng tràm</h3>
+<p>Khám phá những con đường nước xanh mát và hệ sinh thái tự nhiên.</p>
+</div>
+</div>
+
+<div class="experience-card">
+<img src="images/ho-ta-pa.jpg" alt="Hồ Tà Pạ">
+<div>
+<h3>Khám phá thiên nhiên</h3>
+<p>Ngắm cảnh hồ Tà Pạ, núi rừng và những cánh đồng thốt nốt.</p>
+</div>
+</div>
+
+<div class="experience-card">
+<img src="images/lang-cham.jpg" alt="Làng Chăm">
+<div>
+<h3>Tìm hiểu văn hóa</h3>
+<p>Khám phá kiến trúc, nghề truyền thống và phong tục địa phương.</p>
+</div>
+</div>
+
+<div class="experience-card">
+<img src="images/food-bun-ca.jpg" alt="Ẩm thực">
+<div>
+<h3>Thưởng thức ẩm thực</h3>
+<p>Khám phá những món ngon mang đậm hương vị miền Tây.</p>
+</div>
+</div>
+
+<div class="experience-card">
+<img src="images/nui-cam.jpg" alt="Núi Cấm">
+<div>
+<h3>Tham quan Núi Cấm</h3>
+<p>Tận hưởng không khí trong lành và cảnh quan núi rừng.</p>
+</div>
+</div>
+
+<div class="experience-card">
+<img src="images/thot-not.jpg" alt="Cây thốt nốt">
+<div>
+<h3>Ngắm hàng thốt nốt</h3>
+<p>Lưu giữ những hình ảnh đẹp của vùng quê Bảy Núi.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- LỊCH TRÌNH -->
+
+<section class="section soft">
+
+<div class="wrap">
+
+<div class="heading">
+
+<small>TRAVEL SUGGESTION</small>
+
+<h2>Gợi ý lịch trình 2 ngày 1 đêm</h2>
+
+<p>
+Một hành trình kết hợp tham quan văn hóa,
+tâm linh và khám phá thiên nhiên.
+</p>
+
+</div>
+
+<div class="plan">
+
+<div class="day">
+
+<b>NGÀY 1</b>
+
+<img src="images/tay-an.jpg" alt="Tây An Cổ Tự">
+
+<div class="day-copy">
+<h3>Khám phá Châu Đốc</h3>
+
+<p>
+Tham quan khu vực Núi Sam, Miếu Bà Chúa Xứ,
+Tây An Cổ Tự; tìm hiểu văn hóa địa phương
+và thưởng thức đặc sản.
+</p>
+</div>
+
+</div>
+
+
+<div class="day">
+
+<b>NGÀY 2</b>
+
+<img src="images/tra-su.jpg" alt="Rừng tràm Trà Sư">
+
+<div class="day-copy">
+<h3>Trải nghiệm thiên nhiên</h3>
+
+<p>
+Khám phá rừng tràm Trà Sư và vùng núi
+Thất Sơn. Ngắm cảnh thiên nhiên và
+tìm hiểu hệ sinh thái địa phương.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- KINH NGHIỆM -->
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="heading">
+
+<small>TRAVEL GUIDE</small>
+
+<h2>Kinh nghiệm du lịch An Giang</h2>
+
+<p>
+Một số lưu ý giúp chuyến đi trở nên thuận tiện
+và trọn vẹn hơn.
+</p>
+
+</div>
+
+<div class="tips-grid">
+
+<div class="tip">
+<img src="images/tra-su-2.jpg" alt="Cảnh thiên nhiên">
+<div>
+<h3>☀️ Thời điểm tham quan</h3>
+<p>
+Mùa khô thích hợp tham quan núi và các công trình
+tâm linh. Mùa nước nổi phù hợp khám phá
+rừng tràm và sông nước.
+</p>
+</div>
+</div>
+
+<div class="tip">
+<img src="images/nui-cam-2.jpg" alt="Đường núi">
+<div>
+<h3>🚌 Phương tiện di chuyển</h3>
+<p>
+Du khách có thể lựa chọn xe khách,
+ô tô hoặc xe máy tùy theo nhu cầu.
+Nên tìm hiểu trước cung đường.
+</p>
+</div>
+</div>
+
+<div class="tip">
+<img src="images/tra-su-3.jpg" alt="Rừng tràm">
+<div>
+<h3>🌿 Bảo vệ môi trường</h3>
+<p>
+Không xả rác, hạn chế đồ nhựa dùng một lần,
+không làm ảnh hưởng đến động vật
+và cảnh quan tự nhiên.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- THƯ VIỆN ẢNH -->
+
+<section class="section soft" id="hinhanh">
+
+<div class="wrap">
+
+<div class="heading">
+
+<small>PHOTO MOMENTS</small>
+
+<h2>Thư viện hình ảnh An Giang</h2>
+
+<p>
+Những hình ảnh về thiên nhiên, văn hóa,
+ẩm thực và cuộc sống bình dị của người dân.
+</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="images/tra-su.jpg" alt="Rừng tràm Trà Sư">
+
+<img src="images/nui-cam.jpg" alt="Núi Cấm">
+
+<img src="images/tay-an.jpg" alt="Tây An Cổ Tự">
+
+<img src="images/ho-ta-pa.jpg" alt="Hồ Tà Pạ">
+
+<img src="images/ba-chua-xu.jpg" alt="Miếu Bà Chúa Xứ">
+
+<img src="images/lang-cham.jpg" alt="Làng Chăm">
+
+<img src="images/le-hoi-dua-bo.jpg" alt="Đua bò Bảy Núi">
+
+<img src="images/van-hoa-khmer.jpg" alt="Văn hóa Khmer">
+
+<img src="images/food-bun-ca.jpg" alt="Bún cá">
+
+<img src="images/food-thot-not.jpg" alt="Bánh bò thốt nốt">
+
+<img src="images/food-ga-dot.jpg" alt="Gà đốt">
+
+<img src="images/thot-not.jpg" alt="Hàng thốt nốt">
+
+</div>
+</div>
+</section>
+
+
+<!-- THÔNG ĐIỆP -->
+
+<section class="callout">
+
+<h2>An Giang – Đi để cảm nhận</h2>
+
+<p>
+Hãy cùng quảng bá vẻ đẹp quê hương,
+trân trọng di sản văn hóa và chung tay
+giữ gìn môi trường để du lịch An Giang
+phát triển xanh, bền vững.
+</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="wrap">
+
+<strong>AN GIANG TOURISM</strong>
+
+<p>
+Website giới thiệu và quảng bá tiềm năng
+du lịch An Giang.
+</p>
+
+<p class="credit">
+Sản phẩm học tập – Khám phá vẻ đẹp An Giang.
+</p>
+
+<p>© 2026 – AN GIANG TOURISM</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
